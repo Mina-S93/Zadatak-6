@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100%;
+    position: relative;
+}
+
+body{
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    background-color: rgb(240, 240, 240);
+    height: 100%;
+}
+
+.modal-pledge,
+.agree-modal{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    justify-content: center;
+}
+
+.modal-pledge{
+    display: flex;
+}
+
+.agree-modal{
+    display: none;
+}
+
+.modal-pledge-container{
+    position: relative;
+    background-color: #fff;
+    padding: 3%;
+    width: 50%;
+    margin: 15% 0;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.close-modal{
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    cursor: pointer;
+}
+
+.question{
+    margin: 3% 0;
+    color: hsl(0, 0%, 48%);
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pledge-container{
+    border:1px solid hsl(0, 0%, 48%);
+    display: block;
+    margin: 4% 0;
+    border-radius: 7px;
+    position: relative;
+}
+
+.pledge-info{
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.pledge-info input{
+    margin-right: 2%;
+}
+
+.pledge-price{
+    margin-left: 2%;
+    color: hsl(176, 50%, 47%);
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+.pledge-description{
+    width: 100%;
+    margin-left: 4%;
+    margin-top: 2%;
+    line-height: 2;
+    color: hsl(0, 0%, 48%);
+}
+
+.pledge-name-price{
+    display: flex;
+    flex-basis: 65%;
+}
+
+.pledge-info h3:hover{
+    color: hsl(176, 50%, 47%);
+}
+
+.pledge-left-container{
+    flex-basis: 25%;
+    text-align: end;
+    color: hsl(0, 0%, 48%);
+}
+
+.pledge-left{
+    font-weight: 700;
+    margin-right: 2%;
+    color: #000;
+}
+
+.pledge-sumbit{
+    border-top: 1px solid hsl(0, 0%, 48%);
+    display: none;
+    align-items: center;
+    padding: 4%;
+    color: hsl(0, 0%, 48%);
+    justify-content: flex-end;
+    transition: 0.5s;
+}
+
+.pledge-sumbit .pledge-input-number-label{
+    position: relative;
+    border-radius: 20px;
+    width: 40%;
+    margin-right: 3%;
+}
+
+.pledge-submit-buttons{
+    display: flex;
+    flex-basis: 50%;
+    justify-content: flex-end;
+}
+
+.pledge-input-number-label span{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+
+.pledge-sumbit input[type=number]{
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #000;
+    font-weight: 700;
+    padding: 1% 0;
+    padding-left: 35%;
+    border-radius: 20px;
+    border:1px solid hsl(0, 0%, 48%);
+}
+
+.pledge-sumbit input[type=number]:focus,
+.pledge-sumbit input[type=submit]:focus{
+    outline: none;
+}
+
+.pledge-sumbit input[type=number]:focus{
+    border: 1px solid hsl(176, 72%, 28%);
+}
+
+.pledge-sumbit input[type=number]::placeholder{
+    color: #000;
+    font-weight: 700;
+}
+
+.pledge-sumbit p{
+    flex-basis: 70%;
+}
+
+.pledge-sumbit input[type=submit]{
+    border-radius: 20px;
+    background-color: hsl(176, 50%, 47%);
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+
+.pledge-sumbit input[type=submit]:hover,
+.agree-modal-container button:hover,
+.back-button:hover,
+.reward-footer button:hover{
+    background-color: hsl(176, 72%, 28%);
+    transition: 0.5s;
+}
+
+.agree-modal-container{
+    width: 40%;
+    background-color: #fff;
+    padding: 3%;
+    border-radius: 10px;
+    text-align: center;
+    height: max-content;
+    margin: 15% 0;
+}
+
+.agree-modal-container img{
+    width: 20%;
+}
+
+.agree-modal-container h2{
+    margin-top: 7%;
+}
+
+.agree-modal-container p{
+    line-height: 1.8;
+    color: hsl(0, 0%, 48%);
+    margin: 3% 0 7% 0;
+}
+
+.agree-modal-container button{
+    color: #fff;
+    background-color: hsl(176, 50%, 47%);
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+
+    border: none;
+}
+
+header{
+    background: url(images/image-hero-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25rem;
+    width: 100%;
+}
+
+.desktop-navigation{
+    width: 75%;
+    margin: auto;
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-navigation{
+    display: none;
+}
+
+.desktop-navigation nav{
+    flex-basis: 50%;
+}
+
+.desktop-navigation nav ul {
+    display: flex;
+    justify-content: end;
+}
+
+.desktop-navigation nav ul li{
+    list-style-type: none;
+    margin-left: 10%;
+}
+
+.desktop-navigation nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.desktop-navigation nav ul li a:hover{
+    text-decoration: underline;
+}
+
+main{
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: -10vh;
+}
+
+.heading{
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 7% 7% 7%;
+}
+
+.heading-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading img{
+    transform: translateY(-50%);
+}
+
+.heading-p{
+    margin: 3% 0 5% 0;
+    color: hsl(0, 0%, 48%);
+}
+
+.back-button{
+    color: #fff;
+    background-color: hsl(176, 50%, 47%);
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: 700;
+}
+
+.bookmark-container{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bookmark-container:hover{
+    opacity: 0.5;
+}
+
+.bookmark-container button{
+    background-color: rgb(240, 240, 240);
+    color: hsl(0, 0%, 48%);
+    border-radius: 30px;
+    padding: 1.3rem 2rem 1.3rem 5rem;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.bookmarkSVG-circle{
+    fill: hsl(176, 72%, 28%);
+}
+
+.bookmarkSVG-path{
+    fill: #fff;
+}
+
+.bookmark-button{
+    color: hsl(176, 72%, 28%) !important;
+}
+
+#bookmarkSVG{
+    transform: translateX(100%);
+}
+
+.data{
+    background-color: #fff;
+    margin: 0.5% 0 5% 0;
+    border-radius: 10px;
+    padding: 7%;
+}
+
+.data-numbers{
+    display: flex;
+}
+
+.data-container{
+    flex-grow: 1;
+}
+
+.data-container:not(:first-of-type){
+    border-left: 1px solid hsl(0, 0%, 48%);
+    padding: 0 8%;
+}
+
+.data-number{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.data-p{
+    color: hsl(0, 0%, 48%);
+    font-size: 1em;
+    margin-top: 3%;
+}
+
+.progres-bar{
+    margin-top: 7%;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    height: 0.7rem;
+}
+
+.progres-bar-filled{
+    background-color: hsl(176, 50%, 47%);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.about-project{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 7%;
+}
+
+.about-project p{
+    color: hsl(0, 0%, 48%);
+    line-height: 1.5;
+    margin: 5% 0;
+}
+
+.reward-container{
+    border: 1px solid hsl(0, 0%, 48%);
+    border-radius: 10px;
+    padding: 4%;
+    margin: 3% 0;
+}
+
+.reward-heading,
+.reward-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reward-heading .reward-heading-p{
+    margin: 0;
+    color: hsl(176, 50%, 47%);
+    font-weight: 700;
+}
+
+.reward-footer p{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.reward-footer-left{
+    font-size: 2em;
+    font-weight: 700;
+    color: #000;
+    margin-right: 15%;
+}
+
+.reward-footer button {
+    color: #fff;
+    background-color: hsl(176, 50%, 47%);
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    border: none;
+}
+
+@media  screen and (max-width: 1000px) {
+    .modal-pledge-container,
+    main{
+        width: 70%;
+    }
+
+    .agree-modal-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-pledge-container{
+        padding: 5%;
+        width: 90%;
+        margin: 30% 0;
+    }
+
+    .close-modal{
+        right: 7%;
+    }
+
+    .question{
+        margin: 5% 0;
+        line-height: 1.5;
+    }
+
+    .pledge-info{
+        padding: 5%;
+    }
+
+    .pledge-description{
+        margin: 5% 0;
+    }
+
+    .pledge-left-container{
+        order: 1;
+        text-align: start;
+    }
+
+    .pledge-name-price{
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .pledge-price{
+        margin-left: 0;
+    }
+
+    .pledge-info input {
+        margin-right: 4%;
+        margin-top: 3%;
+    }
+
+    .pledge-left{
+        font-size: 1.2em;
+    }
+
+    .pledge-sumbit {
+        padding: 7%;
+        flex-direction: column;
+    }
+    
+    .pledge-submit-buttons{
+        flex-basis: 100%;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .pledge-sumbit .pledge-input-number-label {
+        width: 100%;
+    }
+
+    .pledge-sumbit input[type=number] {
+        padding: 4vw 6vw;
+        padding-left: 11vw;
+    }
+    
+    .pledge-sumbit input[type=submit] {
+        padding: 2vw 8vw;
+    }
+
+    .agree-modal-container {
+        width: 90%;
+        margin-top: 50%; 
+    }
+
+    .agree-modal-container button {
+        padding: 4vw 8vw;
+    }
+
+    header {
+        background: url(images/image-hero-mobile.jpg);
+        height: 45vh;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    main {
+        width: 90%;
+        margin: auto;
+        position: relative;
+        top: -10vw;
+    }
+
+    .data-numbers {
+        flex-direction: column;
+    }
+
+    .bookmark-container button {
+        display: none;
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    #bookmarkSVG {
+        transform: translateX(0%);
+    }
+
+    .back-button {
+        padding: 1vw 15vw;
+    }
+
+    .data{
+        text-align: center;
+        margin: 5% 0;
+    }
+
+    .data-numbers{
+        align-items: center;
+    }
+
+    .data-container:first-of-type{
+       margin-bottom: 10%;
+    }
+
+    .data-container:not(:first-of-type) {
+        border-left: none;
+        border-top: 1px solid hsl(0, 0%, 48%);
+        padding: 5% 0;
+    }
+
+    .progres-bar {
+        height: 3vw;
+    }
+
+    .reward-heading, .reward-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reward-footer button {
+        padding: 4vw 9vw;
+        margin: 5% 0;
+    }
+
+    .desktop-navigation{
+        display: none;
+    }
+
+    .mobile-navigation{
+        display: block;
+    }
+
+    .mobile-navigation-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        padding: 5% 0;
+    }
+
+    .hamburger-menu{
+        cursor: pointer;
+    }
+
+    .mobile-nav{
+        display: none;
+        padding: 5%;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+    }
+
+    .mobile-nav-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-li{
+        margin-top: 5%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .mobile-li li{
+        background-color: #fff;
+        list-style-type: none;
+        padding: 5%;
+        border-bottom: 1px solid rgb(240, 240, 240);
+        cursor: pointer;
+    }
+
+    .mobile-li li a{
+        color: #000;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .mobile-close{
+        cursor: pointer;
+    }
+} 
