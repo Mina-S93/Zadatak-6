@@ -11,6 +11,12 @@ let dataBackers = document.querySelector("#data-backers");
 let progresBar = document.querySelector(".progres-bar-filled");
 let rewardsLeft = document.querySelectorAll(".reward-footer-left");
 let containers = document.querySelectorAll(".pledge-container");
+let backBtn = document.querySelector(".back-button");
+
+//display modal
+backBtn.addEventListener("click", () => {
+	modalPledge.style.display = "flex";
+});
 
 //close modal without pledge
 closeModal.addEventListener("click", () => {
