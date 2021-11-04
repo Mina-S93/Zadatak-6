@@ -12,11 +12,18 @@ let progresBar = document.querySelector(".progres-bar-filled");
 let rewardsLeft = document.querySelectorAll(".reward-footer-left");
 let containers = document.querySelectorAll(".pledge-container");
 let backBtn = document.querySelector(".back-button");
+let selectRewardBtn = document.querySelectorAll(".reward-footer button");
 
-//display modal
-backBtn.addEventListener("click", () => {
+//display modal function
+function displayModal() {
 	modalPledge.style.display = "flex";
-});
+	window.scrollTo(0, 0);
+}
+
+backBtn.addEventListener("click", displayModal);
+selectRewardBtn.forEach((button) =>
+	button.addEventListener("click", displayModal)
+);
 
 //close modal without pledge
 closeModal.addEventListener("click", () => {
